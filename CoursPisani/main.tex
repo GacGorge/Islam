@@ -1,0 +1,78 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
+% This is a simple template for a XeLaTeX document using the "article" class,
+% with the fontspec package to easily select fonts.
+
+\documentclass[11pt]{book} % use larger type; default would be 10pt
+
+\usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
+\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
+
+
+%\setmainfont{Charis SIL} % set the main body font (\textrm), assumes Charis SIL is installed
+%\setsansfont{Deja Vu Sans}
+%\setmonofont{Deja Vu Mono}
+
+% other LaTeX packages.....
+\include{Format}
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\title{Fondations de l'Islam}
+\author{Notes du Cours d'Emmanuel Pisani}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+
+%\citestyle{verbose}
+
+
+\maketitle
+
+%-------------------------------------
+
+
+\pagenumbering{roman} 
+\setcounter{page}{1}
+\begin{fullwidth}
+\tableofcontents
+\end{fullwidth}
+
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+\include{Introduction}
+\mainmatter
+
+%\include{Test}
+\include{IntroIslam} %1
+\include{Historique} %2
+\include{Prophete} %3
+\include{Coran} %4 et 5
+\include{5piliers}
+\include{Croyances} %8
+%\include{IbnToumart}
+\include{Shiisme} %9
+\include{Droit} %10
+\include{Soufisme}
+\include{Philosophie}
+\include{Eschatologie}
+\include{Universalite}
+\include{FemmeIslam}
+\include{Christianisme}
+\include{Theologiens}
+%\subsection{}
+
+\backmatter
+
+%\bibliography{Theo}
+%\bibliographystyle{siam}
+\printbibliography
+
+\listoftheorems[ignoreall,show={Def}]
+
+\listoftheorems
+
+\printindex
+\end{document}

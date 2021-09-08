@@ -1,0 +1,192 @@
+
+\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%\geometry{asymmetric}
+\geometry{outer=2.5in}
+\geometry{marginparwidth=2in}
+\geometry{marginparsep=20pt}
+
+% pour mettre des tableaux au bon endroit avec l'option H
+%\usepackage{float}
+% grands tableaux... pratiques
+\usepackage{longtable}
+ % pour faire des beaux tableaux
+\usepackage{booktabs}
+ 
+ % format des fonts comme Tufte
+ \usepackage{xunicode} % Unicode support for LaTeX character names (accents, European chars, etc)
+\usepackage{xltxtra} % Extra customizations for XeLaTeX
+\usepackage{amsmath}
+\usepackage{amsthm}
+ \usepackage{fontspec}
+\setmainfont[Renderer=Basic, Numbers=OldStyle, Scale = 1.0]{TeX Gyre Pagella}
+\setsansfont[Renderer=Basic, Scale=0.90]{TeX Gyre Heros}
+\setmonofont[Renderer=Basic]{TeX Gyre Cursor}
+
+
+%\usepackage{marginnote}
+%\renewcommand*{\raggedleftmarginnote}{}
+%\renewcommand*{\raggedrightmarginnote}{}
+
+% Margin Caption (done with sidenotes package)
+% UTILISER \sidecaption pour une caption
+%\usepackage[margincaption,rightcaption,ragged,wide]{sidecap}
+%\usepackage[margincaption,outercaption]{sidecap}
+%\sidecaptionvpos{figure}{t} 
+%\sidecaptionvpos{table}{t}
+% format des captions des figures
+%\captionsetup[SCfigure]{format=plain, ...}
+%\captionsetup[SCtable]{format=plain, ...}
+
+\usepackage{sidenotes}
+
+% bibliography
+%\usepackage{natbib}
+%\usepackage[notes,backend=biber]{biblatex-chicago}
+
+%\usepackage[style=reading]{biblatex}
+\usepackage[citestyle=reading,bibstyle=authortitle]{biblatex}
+
+\addbibresource{Theo.bib}
+
+%\bibliography{sample}
+%\bibliography{siam}
+
+%\newcommand*{\sidecite}[1]{\sidenote{[\cite{#1}].\citeauthor{#1} - \citetitle{#1}}
+
+
+\usepackage{url}
+\setlength\parindent{0pt}
+% marginnote mn
+\newcommand\mn[1]{\marginpar{\footnotesize #1}}
+
+\newcommand\sn[1]{\sidenote{\footnotesize #1}}
+
+%\usepackage{biblatex} %pour citer des numero de page
+\usepackage[english,main=french]{babel}
+\babelprovide[import]{arabic}
+\babelfont[arabic]{rm}{Amiri}
+\usepackage{arabtex}
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%\newcommand\TArabe[1]{\foreignlanguage{arabic}{\RL}}
+\newcommand\TArabe[1]{\foreignlanguage{arabic}{#1}}
+\newcommand{\vide}[1]{}
+%Recherche \hypertarget et remplacer par \vide
+% \protect\hyperlink par \vide
+%\texorpdfstring par RIEN
+% \RL : \TArabe
+% rechercher \footnote{ et remplacer par \sn{
+% rechercher Al Gazali
+% package pour faire des réferences à des labels pour le chapitre théologiens
+\usepackage{cleveref}
+
+% gros tableau
+\usepackage{longtable}
+
+\usepackage{eurosym}  %Euro
+\usepackage[super]{nth} %for \nth{1} to give 1st
+\usepackage{array} % permet de centrer les tableaux\
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
+
+
+% Prints an epigraph and speaker in sans serif, all-caps type.
+\newcommand{\openepigraph}[2]{%
+  %\sffamily\fontsize{14}{16}\selectfont
+  \begin{fullwidth}
+  \sffamily\large
+  \begin{doublespace}
+  \noindent\allcaps{#1}\\% epigraph
+  \noindent\allcaps{#2}% author
+  \end{doublespace}
+  \end{fullwidth}
+}
+
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+
+%\splittopskip=5cm 
+
+ 
+
+
+
+
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{thmtools}
+\usepackage{blindtext} % avoid to cut theorem
+% avoid to have theorem or definition in the list of theorm
+\makeatletter
+\patchcmd\thmt@mklistcmd
+  {\thmt@thmname}
+  {\check@optarg{\thmt@thmname}}
+  {}{}
+\patchcmd\thmt@mklistcmd
+  {\thmt@thmname\ifx}
+  {\check@optarg{\thmt@thmname}\ifx}
+  {}{}
+\protected\def\check@optarg#1{%
+  \@ifnextchar\thmtformatoptarg\@secondoftwo{#1}%
+}
+\makeatother
+% format of theorem
+\declaretheoremstyle[
+    headfont=\scshape, 
+    notebraces={\scshape : }{.},
+    bodyfont=\normalfont,
+    headpunct={},
+    postheadspace=\newline,
+%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    preheadhook={\begin{mdframed}[backgroundcolor=white!20, 
+        splittopskip = \topskip,
+            linecolor=blue!30, 
+            linewidth = 2pt,
+            innertopmargin=6pt,
+            roundcorner=1pt, 
+            innerbottommargin=6pt, 
+            skipabove=\parsep,     
+            skipbelow=\parsep]},
+            postfoothook=\end{mdframed}]{Definitionstyle}
+
+
+% example environment - thmtools
+
+
+\declaretheorem[ style = Definitionstyle, name = {Definition}]{definition}
+\declaretheorem[ style = Definitionstyle, name = {Definition}, sibling=definition]{Def}
+
+
+\declaretheoremstyle[
+    headfont=\scshape, 
+    notebraces={\scshape : }{.},
+    bodyfont=\normalfont,
+    headpunct={},
+    postheadspace=\newline,
+%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
+    spacebelow=\parsep,
+    spaceabove=\parsep
+]{Exercisestyle}
+% example environment - thmtools
+
+
+
+\declaretheorem[ style = Exercisestyle, name = Exemple ]{Ex}
+
+
