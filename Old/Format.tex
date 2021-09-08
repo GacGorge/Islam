@@ -1,4 +1,20 @@
-
+% ARABE
+\usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
+%\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
+%\usepackage{biblatex} %pour citer des numero de page
+\usepackage[english,main=french]{babel}
+\babelprovide[import]{arabic}
+\babelfont[arabic]{rm}{Amiri}
+%\usepackage{arabtex}
+ \usepackage{etoolbox}
+\makeatletter
+\ifpatchable*{\@chapter}{\typeout{Chapter can be patched}}{\typeout{Chapter cannot be patched}}
+\patchcmd{\@chapter}%
+{\addcontentsline{toc}{chapter}}%
+{\let\f@rtocold\f@rtoc \def\f@rtoc{\uppercase\expandafter{\f@rtocold}} \addcontentsline{toc}{chapter}}%
+{\typeout{Succeeded}}%
+{\typeout{Failed}}
+\makeatother
 %--------------------------------------------------------------
 % Cadre
 %--------------------------------------------------------------
@@ -10,6 +26,8 @@
 %\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
 \usepackage{units}
 % Typesets the font size, leading, and measure in the form of 10/12x26 pc.
+
+
 \newcommand{\measure}[3]{#1/#2$\times$\unit[#3]{pc}}
 \newcommand{\coefGraph}{1} % Taille du graphe dans les marges; sert uniquement pour Epub, sinon = 1 x textwidth
 %\usepackage{multicol} %multicolum for Definition

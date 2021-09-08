@@ -18,7 +18,7 @@
 %\newcommand\TArabe[1]{\foreignlanguage{arabic}{\RL}}
 \newcommand\TArabe[1]{\foreignlanguage{arabic}{#1}}
 \newcommand{\vide}[1]{}
-
+ 
 
 % Prints the month name (e.g., January) and the year (e.g., 2008)
 \newcommand{\monthyear}{%
@@ -46,15 +46,7 @@
   \end{fullwidth}
 }
 
-\newcommand{\PathFiguresChapun}{Image}
-\newcommand{\PathFiguresChapdeux}{Image}
-\newcommand{\PathFiguresChapquatre}{Image}
-\newcommand{\PathFiguresChapcinq}{Image}
-\newcommand{\PathFiguresChapsix}{Image}
-\newcommand{\PathFiguresChapsept}{Image}
-\newcommand{\PathFiguresChapdix}{Image}
-\newcommand{\PathFiguresChaponze}{Image}
-\newcommand{\PathFiguresCAT}{}
+
 
 
 \Newassociation{solution}{Soln}{Risk} 
@@ -89,7 +81,15 @@
 \newcommand{\eg}{\textit{e.\hairsp{}g.}\xspace}
 \newcommand{\na}{\quad--}% used in tables for N/A cells
 
-
-
-
+ \newcommand{\bi}{\begin{itemize}}
+ \newcommand{\ei}{\end{itemize}}
+  \newcommand{\be}{\begin{Ex}}
+ \newcommand{\ee}{\end{Ex}}
+ \newcommand{\mn}[1]{\marginnote{#1}}
+  \newcommand{\sn}[1]{\sidenote{#1}}
+%  \renewcommand{\chapter}[1][]{\chapter{#1}}
+%  \renewcommand{\section}[1][]{\section{#1}}
+%\renewcommand{\subsection}[1][]{\subsection{#1}}
+ \renewcommand{\subsubsection}[1][]{\paragraph{#1}}
+% \renewcommand{\paragraph}[1][]{\paragraph{#1}}
 %%
