@@ -1,12 +1,73 @@
 
-\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper} % or letterpaper (US) or a5paper or....
-%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+%-------------------------------------------------
+% Geometry (et sidenotes) : format tufte light
+%-------------------------------------------------
 
-%\geometry{asymmetric}
-\geometry{outer=2.5in}
-\geometry{marginparwidth=2in}
-\geometry{marginparsep=20pt}
+\usepackage{sidenotes}
+%\usepackage{mwe}
+
+%\usepackage[showframe]{geometry}
+\usepackage{geometry}
+
+\geometry{letterpaper, left=2.5cm, right=2.6in, top=50pt,bottom=50pt, marginparsep=20pt, marginparwidth=2in,  footskip=40pt}
+\renewcommand{\baselinestretch}{1.1} 
+\usepackage{placeins} % floatbarrier
+\usepackage{fullwidth}
+ 
+\makeatletter
+%\renewcommand{\@sidenotes@adjust}{%
+% \checkoddpage%
+% \ifoddpage%
+% %
+% \else%
+% %\hspace{\@sidenotes@extrawidth}%    %% this was originally there
+% \fi}
+%%
+%% or
+%%
+\let\@sidenotes@adjust\relax
+\makeatother
+
+\usepackage{url}
+\setlength\parindent{0pt}
+% marginnote mn
+\newcommand\mn[1]{\marginpar{\footnotesize #1}}
+
+\newcommand\sn[1]{\sidenote{\footnotesize #1}}
+
+%-------------------------------------------------
+% cadre
+%-------------------------------------------------
+
+\usepackage{tikz}
+\usepackage[framemethod=TikZ]{mdframed}
+\usetikzlibrary{positioning}  
+
+
+\usepackage{xcolor}
+%\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
+\usepackage{units}
+% Typesets the font size, leading, and measure in the form of 10/12x26 pc.
+
+
+\newcommand{\measure}[3]{#1/#2$\times$\unit[#3]{pc}}
+\newcommand{\coefGraph}{1} % Taille du graphe dans les marges; sert uniquement pour Epub, sinon = 1 x textwidth
+%\usepackage{multicol} %multicolum for Definition
+\newcommand{\largecoefGraph}{1.2} % Taille du graphe dans les marges en proportion de textwidth; sert uniquement pour Epub, sinon = textwidth; remplacer \textwidth par \coefGraph\textwidth
+%\usepackage[table]{xcolor}
+%\usepackage[xcdraw]{xcolor}
+%\usepackage[dvipsnames]{xcolor}
+%\usepackage{amsmath,amssymb,amsthm}
+%\usepackage{mathtools}
+%\usepackage{mathspec}
+%\usepackage{xltxtra,xunicode}
+\newcommand{\myinnertopmargin}{0pt} % marge qui sert pour les définitions et proprietés
+
+
+
+%-------------------------------------------------
+% tableau
+%-------------------------------------------------
 
 % pour mettre des tableaux au bon endroit avec l'option H
 %\usepackage{float}
@@ -15,17 +76,42 @@
  % pour faire des beaux tableaux
 \usepackage{booktabs}
  
+ 
+%-------------------------------------------------
+% caractère
+%-------------------------------------------------
+
+\usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
+\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
+
+
+%\setmainfont{Charis SIL} % set the main body font (\textrm), assumes Charis SIL is installed
+%\setsansfont{Deja Vu Sans}
+%\setmonofont{Deja Vu Mono}
+
  % format des fonts comme Tufte
  \usepackage{xunicode} % Unicode support for LaTeX character names (accents, European chars, etc)
 \usepackage{xltxtra} % Extra customizations for XeLaTeX
 \usepackage{amsmath}
 \usepackage{amsthm}
- \usepackage{fontspec}
-\setmainfont[Renderer=Basic, Numbers=OldStyle, Scale = 1.0]{TeX Gyre Pagella}
-\setsansfont[Renderer=Basic, Scale=0.90]{TeX Gyre Heros}
-\setmonofont[Renderer=Basic]{TeX Gyre Cursor}
+% \usepackage{fontspec}
+%\setmainfont[Renderer=Basic, Numbers=OldStyle, Scale = 1.0]{TeX Gyre Pagella}
+%\setsansfont[Renderer=Basic, Scale=0.90]{TeX Gyre Heros}
+%\setmonofont[Renderer=Basic]{TeX Gyre Cursor}
+% Palatino for main text and math
+%\usepackage[osf,sc]{mathpazo}
 
+% Helvetica for sans serif
+% (scaled to match size of Palatino)
+%\usepackage[scaled=0.90]{helvet}
 
+% Bera Mono for monospaced
+% (scaled to match size of Palatino)
+%\usepackage[scaled=0.85]{beramono}
+ 
+\setmainfont[Numbers=OldStyle, Scale = 1.0]{TeX Gyre Pagella}
+\setsansfont[Scale=0.90]{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
 %\usepackage{marginnote}
 %\renewcommand*{\raggedleftmarginnote}{}
 %\renewcommand*{\raggedrightmarginnote}{}
@@ -40,9 +126,11 @@
 %\captionsetup[SCfigure]{format=plain, ...}
 %\captionsetup[SCtable]{format=plain, ...}
 
-\usepackage{sidenotes}
-
+%-------------------------------------------------
 % bibliography
+%-------------------------------------------------
+
+% 
 %\usepackage{natbib}
 %\usepackage[notes,backend=biber]{biblatex-chicago}
 
@@ -57,27 +145,31 @@
 %\newcommand*{\sidecite}[1]{\sidenote{[\cite{#1}].\citeauthor{#1} - \citetitle{#1}}
 
 
-\usepackage{url}
-\setlength\parindent{0pt}
-% marginnote mn
-\newcommand\mn[1]{\marginpar{\footnotesize #1}}
 
-\newcommand\sn[1]{\sidenote{\footnotesize #1}}
+
+%-------------------------------------------------
+% caractère
+%-------------------------------------------------
 
 %\usepackage{biblatex} %pour citer des numero de page
+\usepackage[utf8x]{inputenc}
 \usepackage[english,main=french]{babel}
+
 \babelprovide[import]{arabic}
 \babelfont[arabic]{rm}{Amiri}
+\babelprovide[import]{greek}
+\babelfont[greek]{rm}{EB Garamond}
+% ex
+% \foreignlanguage{greek}{Ἰουδαῖοί τε καὶ προσήλυτο.}
+%\babelprovide[import]{greek}
+%\babelfont[greek]{rm}[RawFeature=+calt]{SimonciniGaramondPro}
 \usepackage{arabtex}
+%babel-greek
 
-%%% ToC (table of contents) APPEARANCE
-\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
-\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
-\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
-\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-%\newcommand\TArabe[1]{\foreignlanguage{arabic}{\RL}}
 \newcommand\TArabe[1]{\foreignlanguage{arabic}{#1}}
 \newcommand{\vide}[1]{}
+
+
 %Recherche \hypertarget et remplacer par \vide
 % \protect\hyperlink par \vide
 %\texorpdfstring par RIEN
@@ -85,6 +177,17 @@
 % rechercher \footnote{ et remplacer par \sn{
 % rechercher Al Gazali
 % package pour faire des réferences à des labels pour le chapitre théologiens
+%-------------------------------------------------
+% table of contents
+%-------------------------------------------------
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+%\newcommand\TArabe[1]{\foreignlanguage{arabic}{\RL}}
+
 \usepackage{cleveref}
 
 % gros tableau
@@ -125,68 +228,5 @@
 
 
 
-
-\usepackage[framemethod=TikZ]{mdframed}
-
-\usepackage{thmtools}
-\usepackage{blindtext} % avoid to cut theorem
-% avoid to have theorem or definition in the list of theorm
-\makeatletter
-\patchcmd\thmt@mklistcmd
-  {\thmt@thmname}
-  {\check@optarg{\thmt@thmname}}
-  {}{}
-\patchcmd\thmt@mklistcmd
-  {\thmt@thmname\ifx}
-  {\check@optarg{\thmt@thmname}\ifx}
-  {}{}
-\protected\def\check@optarg#1{%
-  \@ifnextchar\thmtformatoptarg\@secondoftwo{#1}%
-}
-\makeatother
-% format of theorem
-\declaretheoremstyle[
-    headfont=\scshape, 
-    notebraces={\scshape : }{.},
-    bodyfont=\normalfont,
-    headpunct={},
-    postheadspace=\newline,
-%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
-    spacebelow=\parsep,
-    spaceabove=\parsep,
-    preheadhook={\begin{mdframed}[backgroundcolor=white!20, 
-        splittopskip = \topskip,
-            linecolor=blue!30, 
-            linewidth = 2pt,
-            innertopmargin=6pt,
-            roundcorner=1pt, 
-            innerbottommargin=6pt, 
-            skipabove=\parsep,     
-            skipbelow=\parsep]},
-            postfoothook=\end{mdframed}]{Definitionstyle}
-
-
-% example environment - thmtools
-
-
-\declaretheorem[ style = Definitionstyle, name = {Definition}]{definition}
-\declaretheorem[ style = Definitionstyle, name = {Definition}, sibling=definition]{Def}
-
-
-\declaretheoremstyle[
-    headfont=\scshape, 
-    notebraces={\scshape : }{.},
-    bodyfont=\normalfont,
-    headpunct={},
-    postheadspace=\newline,
-%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
-    spacebelow=\parsep,
-    spaceabove=\parsep
-]{Exercisestyle}
-% example environment - thmtools
-
-
-
-\declaretheorem[ style = Exercisestyle, name = Exemple ]{Ex}
 
 

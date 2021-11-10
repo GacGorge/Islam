@@ -1,0 +1,63 @@
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{thmtools}
+\usepackage{blindtext} % avoid to cut theorem
+% avoid to have theorem or definition in the list of theorm
+\makeatletter
+\patchcmd\thmt@mklistcmd
+  {\thmt@thmname}
+  {\check@optarg{\thmt@thmname}}
+  {}{}
+\patchcmd\thmt@mklistcmd
+  {\thmt@thmname\ifx}
+  {\check@optarg{\thmt@thmname}\ifx}
+  {}{}
+\protected\def\check@optarg#1{%
+  \@ifnextchar\thmtformatoptarg\@secondoftwo{#1}%
+}
+\makeatother
+% format of theorem
+\declaretheoremstyle[
+    headfont=\scshape, 
+    notebraces={\scshape : }{.},
+    bodyfont=\normalfont,
+    headpunct={},
+    postheadspace=\newline,
+%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    preheadhook={\begin{mdframed}[backgroundcolor=white!20, 
+        splittopskip = \topskip,
+            linecolor=blue!30, 
+            linewidth = 2pt,
+            innertopmargin=6pt,
+            roundcorner=1pt, 
+            innerbottommargin=6pt, 
+            skipabove=\parsep,     
+            skipbelow=\parsep]},
+            postfoothook=\end{mdframed}]{Definitionstyle}
+
+
+% example environment - thmtools
+
+
+\declaretheorem[ style = Definitionstyle, name = {Definition}]{definition}
+\declaretheorem[ style = Definitionstyle, name = {Definition}, sibling=definition]{Def}
+
+
+\declaretheoremstyle[
+    headfont=\scshape, 
+    notebraces={\scshape : }{.},
+    bodyfont=\normalfont,
+    headpunct={},
+    postheadspace=\newline,
+%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
+    spacebelow=\parsep,
+    spaceabove=\parsep
+]{Exercisestyle}
+% example environment - thmtools
+
+
+
+\declaretheorem[ style = Exercisestyle, name = Exemple ]{Ex}
