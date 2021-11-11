@@ -28,13 +28,20 @@
 \let\@sidenotes@adjust\relax
 \makeatother
 
-\usepackage{url}
 \setlength\parindent{0pt}
-% marginnote mn
-\newcommand\mn[1]{\marginpar{\footnotesize #1}}
+%\usepackage{marginnote}
+%\renewcommand*{\raggedleftmarginnote}{}
+%\renewcommand*{\raggedrightmarginnote}{}
 
-\newcommand\sn[1]{\sidenote{\footnotesize #1}}
-
+% Margin Caption (done with sidenotes package)
+% UTILISER \sidecaption pour une caption
+%\usepackage[margincaption,rightcaption,ragged,wide]{sidecap}
+%\usepackage[margincaption,outercaption]{sidecap}
+%\sidecaptionvpos{figure}{t} 
+%\sidecaptionvpos{table}{t}
+% format des captions des figures
+%\captionsetup[SCfigure]{format=plain, ...}
+%\captionsetup[SCtable]{format=plain, ...}
 %-------------------------------------------------
 % cadre
 %-------------------------------------------------
@@ -65,6 +72,16 @@
 
 
 
+
+%-------------------------------------------------
+% url
+%-------------------------------------------------
+
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{url}
+
+
 %-------------------------------------------------
 % tableau
 %-------------------------------------------------
@@ -75,11 +92,14 @@
 \usepackage{longtable}
  % pour faire des beaux tableaux
 \usepackage{booktabs}
- 
+
  
 %-------------------------------------------------
 % caractère
 %-------------------------------------------------
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05}         % Palladio needs more leading (space between lines)
 
 \usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
 \defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
@@ -109,41 +129,9 @@
 % (scaled to match size of Palatino)
 %\usepackage[scaled=0.85]{beramono}
  
-\setmainfont[Numbers=OldStyle, Scale = 1.0]{TeX Gyre Pagella}
-\setsansfont[Scale=0.90]{TeX Gyre Heros}
-\setmonofont{TeX Gyre Cursor}
-%\usepackage{marginnote}
-%\renewcommand*{\raggedleftmarginnote}{}
-%\renewcommand*{\raggedrightmarginnote}{}
-
-% Margin Caption (done with sidenotes package)
-% UTILISER \sidecaption pour une caption
-%\usepackage[margincaption,rightcaption,ragged,wide]{sidecap}
-%\usepackage[margincaption,outercaption]{sidecap}
-%\sidecaptionvpos{figure}{t} 
-%\sidecaptionvpos{table}{t}
-% format des captions des figures
-%\captionsetup[SCfigure]{format=plain, ...}
-%\captionsetup[SCtable]{format=plain, ...}
-
-%-------------------------------------------------
-% bibliography
-%-------------------------------------------------
-
-% 
-%\usepackage{natbib}
-%\usepackage[notes,backend=biber]{biblatex-chicago}
-
-%\usepackage[style=reading]{biblatex}
-\usepackage[citestyle=reading,bibstyle=authortitle]{biblatex}
-
-\addbibresource{Theo.bib}
-
-%\bibliography{sample}
-%\bibliography{siam}
-
-%\newcommand*{\sidecite}[1]{\sidenote{[\cite{#1}].\citeauthor{#1} - \citetitle{#1}}
-
+%\setmainfont[Numbers=OldStyle, Scale = 1.0]{TeX Gyre Pagella}
+%\setsansfont[Scale=0.90]{TeX Gyre Heros}
+%\setmonofont{TeX Gyre Cursor}
 
 
 
@@ -166,8 +154,10 @@
 \usepackage{arabtex}
 %babel-greek
 
-\newcommand\TArabe[1]{\foreignlanguage{arabic}{#1}}
-\newcommand{\vide}[1]{}
+%\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+%\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%TARabe dans Name
 
 
 %Recherche \hypertarget et remplacer par \vide
@@ -177,54 +167,59 @@
 % rechercher \footnote{ et remplacer par \sn{
 % rechercher Al Gazali
 % package pour faire des réferences à des labels pour le chapitre théologiens
+ 
 %-------------------------------------------------
-% table of contents
+% bibliography
 %-------------------------------------------------
 
+% 
+%\usepackage{natbib}
+%\usepackage[notes,backend=biber]{biblatex-chicago}
+
+%\usepackage[style=reading]{biblatex}
+\usepackage[citestyle=reading,bibstyle=authortitle]{biblatex}
+
+\addbibresource{Theo.bib}
+
+%\bibliography{sample}
+%\bibliography{siam}
+
+%\newcommand*{\sidecite}[1]{\sidenote{[\cite{#1}].\citeauthor{#1} - \citetitle{#1}}
+
+
+
+ %--------------------------------------------------------------
+% Table des matières
+%--------------------------------------------------------------
+ 
+%%%%% TABLE OF CONTENTS
+\setcounter{tocdepth}{1}
+
+\usepackage{etoc}
 %%% ToC (table of contents) APPEARANCE
-\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
-\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
-\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
-\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
-%\newcommand\TArabe[1]{\foreignlanguage{arabic}{\RL}}
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
 
-\usepackage{cleveref}
+\usepackage{cleveref} % referece
 
-% gros tableau
-\usepackage{longtable}
+
 
 \usepackage{eurosym}  %Euro
 \usepackage[super]{nth} %for \nth{1} to give 1st
 \usepackage{array} % permet de centrer les tableaux\
 
 % Prints the month name (e.g., January) and the year (e.g., 2008)
-\newcommand{\monthyear}{%
-  \ifcase\month\or January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or
-  December\fi\space\number\year
-}
 
 
-% Prints an epigraph and speaker in sans serif, all-caps type.
-\newcommand{\openepigraph}[2]{%
-  %\sffamily\fontsize{14}{16}\selectfont
-  \begin{fullwidth}
-  \sffamily\large
-  \begin{doublespace}
-  \noindent\allcaps{#1}\\% epigraph
-  \noindent\allcaps{#2}% author
-  \end{doublespace}
-  \end{fullwidth}
-}
-
-% Inserts a blank page
-\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
 
 %\splittopskip=5cm 
 
  
-
+%-------------------------------------------------
+% édition
+%-------------------------------------------------
+\usepackage{comment}
 
 
 
