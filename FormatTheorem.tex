@@ -109,11 +109,30 @@
 ]{Exercisestyle}
 % example environment - thmtools
 
+\declaretheoremstyle[
+    headfont=\scshape, 
+    notebraces={\scshape : }{.},
+    bodyfont=\normalfont,
+    headpunct={},
+    postheadspace=\newline,
+%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
+    spacebelow=\parsep,
+    spaceabove=\parsep,
+    mdframed={backgroundcolor=gray!30, 
+            splittopskip = \topskip,
+            linecolor=red!30, 
+            linewidth = 2pt,
+            innertopmargin=\myinnertopmargin,
+            roundcorner=1pt, 
+            innerbottommargin=6pt, 
+            skipabove=\parsep,     
+            skipbelow=\parsep} 
+    ]{TobeRetainedstyle}
 
 
 
 
-
+\declaretheorem[ style = TobeRetainedstyle, name = {Synthèse} ]{Synthesis}
 
 
 \declaretheorem[ style = Exercisestyle, numbered=no,name = Property]{property}
