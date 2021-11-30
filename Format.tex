@@ -9,7 +9,7 @@
 %\usepackage[showframe]{geometry}
 \usepackage{geometry}
 
-\geometry{letterpaper, left=2.5cm, right=2.6in, top=50pt,bottom=50pt, marginparsep=20pt, marginparwidth=2in,  footskip=40pt}
+\geometry{letterpaper, left=2cm, right=3in, top=50pt,bottom=50pt, marginparsep=20pt, marginparwidth=2in,  footskip=40pt}
 \renewcommand{\baselinestretch}{1.1} 
 \usepackage{placeins} % floatbarrier
 \usepackage{fullwidth}
@@ -49,7 +49,7 @@
 \usepackage{tikz}
 \usepackage[framemethod=TikZ]{mdframed}
 \usetikzlibrary{positioning}  
-
+\usepackage{placeins} % FLoatbarrier to force float
 
 \usepackage{xcolor}
 %\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
@@ -143,6 +143,8 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[english,main=french]{babel}
 
+
+
 \babelprovide[import]{arabic}
 \babelfont[arabic]{rm}{Amiri}
 \babelprovide[import]{greek}
@@ -153,7 +155,10 @@
 %\babelfont[greek]{rm}[RawFeature=+calt]{SimonciniGaramondPro}
 \usepackage{arabtex}
 %babel-greek
+%\usepackage[sc]{mathpazo}
 
+%\linespread{1.05}         % Palladio needs more leading (space between lines)
+%\usepackage[T1]{fontenc}
 %\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 %\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 
@@ -191,7 +196,7 @@
  %--------------------------------------------------------------
 % Table des matières
 %--------------------------------------------------------------
- 
+ \usepackage{titletoc}
 %%%%% TABLE OF CONTENTS
 \setcounter{tocdepth}{1}
 
