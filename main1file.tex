@@ -1,0 +1,68 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
+% This is a simple template for a XeLaTeX document using the "article" class,
+% with the fontspec package to easily select fonts.
+
+\documentclass[oneside,10pt]{book} % use larger type; default would be 10pt
+
+% other LaTeX packages.....
+\include{Format}
+
+\include{FormatTheorem}
+\include{name}
+\usepackage{graphicx} % support the \includegraphics command and options
+
+\title{Islam}
+\author{Notes du Cours}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+
+%\citestyle{verbose}
+
+
+\maketitle
+
+%-------------------------------------
+
+
+\pagenumbering{roman} 
+\setcounter{page}{1}
+\begin{fullwidth}
+\tableofcontents
+\end{fullwidth}
+
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+ 
+\mainmatter
+
+%\include{Test}
+ \include{CoursCandiard/Introduction}
+%\end{comment}
+\part{Courants de l'Islam Contemporains - }
+\include{CourantsIslamContemporain/Introduction}
+
+
+\part{Théologie Chrétienne des Religions}
+\include{TheologieChrétienneReligions/Introduction}
+\part{Christologie, Culture dans l'histoire}
+\include{ChristologieCultureHistoire/Introduction}
+
+ 
+
+
+\backmatter
+\include{Theologiens}
+%\bibliography{Theo}
+%\bibliographystyle{siam}
+\printbibliography
+
+\listoftheorems[ignoreall,show={Def}]
+\include{Glossaire}
+%\listoftheorems
+
+
+\end{document}
