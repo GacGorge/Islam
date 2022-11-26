@@ -76,8 +76,22 @@
 %\usepackage{xltxtra,xunicode}
 \newcommand{\myinnertopmargin}{0pt} % marge qui sert pour les définitions et proprietés
 
+%-------------------------------------------------
+% Citation
+%-------------------------------------------------
+ \usepackage{etoolbox}
+ \usepackage{setspace}
+
+ 
 
 
+\newenvironment{singlequote}
+{  \begin{quote} 
+  \noindent 
+}
+{  
+  \end{quote}
+}
 
 %-------------------------------------------------
 % url
@@ -254,4 +268,8 @@
 %-------------------------------------------------
 \usepackage{multicol}
 
-
+%-------------------------------------------------
+% Note de marge
+%-------------------------------------------------
+ \newcommand{\mn}[1]{\marginnote{\footnotesize #1}}
+  \newcommand{\sn}[1]{\sidenote{\footnotesize #1}}

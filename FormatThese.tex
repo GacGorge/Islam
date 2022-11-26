@@ -1,0 +1,215 @@
+% Format Thèse ICP
+%-------------------------------------------------
+%Pour tous vos devoirs écrits ou dissertations, vous devrez vous reporter à cette fiche comportant les normes de présentation et de police.
+
+%1-	La police de caractère : Times New Roman 12
+
+
+
+%3-	Les marges :
+%a.	A gauche et à droite : 2,5 cm
+%b.	En haut : 1,5 cm
+%c.	En bas : 2 cm
+%-------------------------------------------------
+\usepackage{geometry}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=1.5cm,bottom=1.5cm}
+%-------------------------------------------------
+
+%\usepackage{booktabs}
+\usepackage{setspace}
+ 
+
+
+%-------------------------------------------------
+% Citation
+%-------------------------------------------------
+ \usepackage{etoolbox}
+% \usepackage{csquotes}
+%\AtBeginEnvironment{quote}{\par\singlespacing\small}
+% \AtBeginEnvironment{quote}{\singlespace\vspace{-\topsep}\small}
+%\AtEndEnvironment{quote}{\vspace{-\topsep}\endsinglespace}
+
+\newenvironment{singlequote}
+{  \begin{quote}\begin{singlespace}
+  \noindent 
+}
+{ \end{singlespace}
+  \end{quote}
+}
+
+
+%\newenvironment{singlequote}  {\quote\small\singlespacingNoVspace} {\endquote}
+  
+
+
+%2-	L’interligne : 1 ½ 
+ \onehalfspacing 
+%6-	Les citations d’auteurs de plus de 3 lignes doivent être isolées du corps du texte.
+%a.	Times New Roman 11
+%b.	Interligne 1
+%c.	Retrait 1 cm
+%d.	Justifié à droite
+%-------------------------------------------------
+% Geometry (et sidenotes) : v
+%-------------------------------------------------
+
+%\usepackage{sidenotes}
+
+%\usepackage{mwe}
+
+%\usepackage[showframe]{geometry}
+
+
+% option classique
+%-------------------------------------------------
+% url
+%-------------------------------------------------
+
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{url}
+%-------------------------------------------------
+% caractère
+%-------------------------------------------------
+
+
+
+
+\usepackage[sc]{mathpazo}
+ 
+
+\usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
+\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
+
+
+%\setmainfont{Charis SIL} % set the main body font (\textrm), assumes Charis SIL is installed
+%\setsansfont{Deja Vu Sans}
+%\setmonofont{Deja Vu Mono}
+
+ % format des fonts comme Tufte
+ \usepackage{xunicode} % Unicode support for LaTeX character names (accents, European chars, etc)
+\usepackage{xltxtra} % Extra customizations for XeLaTeX
+\usepackage{amsmath}
+\usepackage{amsthm}
+%-------------------------------------------------
+% pour le chinois
+\usepackage{xeCJK}
+
+%-------------------------------------------------
+% caractère
+%-------------------------------------------------
+
+%\usepackage{biblatex} %pour citer des numero de page
+\usepackage[utf8x]{inputenc}
+
+\usepackage[english,main=french]{babel}
+
+
+
+\babelprovide[import]{arabic}
+\babelfont[arabic]{rm}{Amiri}
+\babelprovide[import]{greek}
+\babelfont[greek]{rm}{EB Garamond}
+% ex
+% \foreignlanguage{greek}{Ἰουδαῖοί τε καὶ προσήλυτο.}
+%\babelprovide[import]{greek}
+%\babelfont[greek]{rm}[RawFeature=+calt]{SimonciniGaramondPro}
+\usepackage{arabtex}
+
+%4-	Pas d’encadré, pas de grisé, pas d’à-plat
+
+%5-	Le texte et les notes doivent être justifiés à droite et chaque alinéa doit être indenté.
+
+
+
+%\begin{singlespace}…\end{singlespace}
+%\begin{spacing}{2.5}
+%\end{spacing}
+
+
+%7-	Les termes et expressions dans une autre langue que le français doivent être en italique et traduits.
+
+%8-	Pour les citations en grec ou en hébreu, il est recommandé d’utiliser la même police que le corps du texte. Le grec doit comporter accents et esprits. L’hébreu ne doit pas comporter de signes d’accentuation et ne doit pas nécessairement être vocalisé.
+
+%9-	La pagination est en bas de page et centrée.
+
+%10-	Les pages se suivent soit en recto, soit en recto-verso.
+
+
+%12-	Les cartes, graphiques, tableaux et documents divers doivent être numérotés et reportés dans autant de tables qu’il y a de types de documents.
+
+
+
+%-------------------------------------------------
+% bibliography
+%-------------------------------------------------
+% 13-	Les index comportent habituellement les auteurs et les références bibliques. D’autres tables d’index peuvent être créées selon les options à répertorier.
+
+% 
+%\usepackage{natbib}
+
+
+\usepackage{natbib} %A REMETTRE
+%\bibliographystyle{unsrtnat} %A REMETTRE
+%\bibliographystyle{kluwer} %A REMETTRE
+\bibliographystyle{natdin-icp} %A REMETTRE
+
+
+
+%14-	Dans les indications bibliographiques, les titres des livres et des revues doivent être en italique.
+
+%15-	L’écrit ou la dissertation commence par la page de garde et le texte commence avec l’introduction.
+
+%16-	A la fin de l’écrit ou de la dissertation, on doit trouver dans l’ordre :
+%a-	Les annexes, 
+%b-	La bibliographie, 
+%c-	Les tables et index et enfin 
+%d-	La table de matières complète avec les numéros de pages.
+
+%17-	Les annexes éventuelles sont présentées dans un volume à part selon leur importance.
+
+ %--------------------------------------------------------------
+% Table des matières
+%--------------------------------------------------------------
+ \usepackage{titletoc}
+%%%%% TABLE OF CONTENTS
+\setcounter{tocdepth}{1}
+
+\usepackage{etoc}
+%%% ToC (table of contents) APPEARANCE
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+
+\usepackage{cleveref} % referece
+
+
+
+\usepackage{eurosym}  %Euro
+\usepackage[super]{nth} %for \nth{1} to give 1st
+\usepackage{array} % permet de centrer les tableaux\
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+
+
+
+
+%\splittopskip=5cm 
+
+ 
+%-------------------------------------------------
+% édition
+%-------------------------------------------------
+\usepackage{comment}
+
+%-------------------------------------------------
+% multi colonnage
+%-------------------------------------------------
+\usepackage{multicol}
+%-------------------------------------------------
+% Note de marge
+%-------------------------------------------------
+%11-	La numérotation des notes de bas de pages se suit sur l’ensemble de l’écrit.
+
+ \newcommand{\mn}[1]{\footnote{\footnotesize #1}}
+  \newcommand{\sn}[1]{\footnote{\footnotesize #1}}
+ 
