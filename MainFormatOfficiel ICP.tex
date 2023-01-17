@@ -5,7 +5,7 @@
 % with the fontspec package to easily select fonts.
 
 %\documentclass[oneside,10pt]{article} % use larger type; default would be 10pt
-\documentclass[oneside,10pt]{book}
+\documentclass[oneside,10pt]{article}
 % other LaTeX packages.....
 %\include{Format}
 \include{FormatThese}
@@ -17,11 +17,14 @@
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
+\title{Le dialogue des Religions et \textit{Laudato Si}}
+\author{Guillaume Gorge}
+%\date{12 décembre 2022}
 \begin{document}
  
 %\citestyle{verbose}
 
-
+\maketitle
 
 
 %-------------------------------------
@@ -45,7 +48,10 @@
 
 %\include{CoursTheo/Augustin}
 %\include{SeminaireMission/RiteChinois}
-\include{SeminaireMission/10. CharlesdeFoucauldSynthese.tex}
+%M\include{SeminaireMission/10. CharlesdeFoucauldSynthese.tex}
+
+\input{AtelierlectureTheologie/MemoireM1ISTRLaudatoSi.tex}
+
  %\include{Arabe/IntroductionArabe}
  
 
@@ -59,6 +65,7 @@
 %\listoftheorems[ignoreall,show={Def}]
 %\include{Glossaire}
 %\listoftheorems
-
-
+\begin{singlespace}
+\bibliography{Theo}
+\end{singlespace}
 \end{document}
