@@ -238,6 +238,11 @@
 %%%%% TABLE OF CONTENTS
 \setcounter{tocdepth}{1}
 
+% Subtitle with Chapter
+\newcommand\Chapter[2]{
+  \chapter[#1: {\itshape#2}]{#1\\[2ex]\Large\itshape#2}
+}
+
 \usepackage{etoc}
 %%% ToC (table of contents) APPEARANCE
 %\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
