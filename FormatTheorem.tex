@@ -129,7 +129,20 @@
             skipbelow=\parsep} 
     ]{TobeRetainedstyle}
 
-
+\declaretheoremstyle[
+    headfont=\scshape, 
+    notebraces={\scshape }{.},
+    bodyfont=\normalfont,
+  %      bodyfont=\quote,
+    headpunct={},
+   postheadspace=\newline,  
+  %  leftmargin =1cm,   % this is the adjusting screw
+  %  rightmargin =1cm,  % this is the adjusting screw
+%    postheadhook={\textcolor{red}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
+    spacebelow=\parsep,
+  %  spaceabove=\parsep
+]{StyleEcriture}
+% example environment - thmtools
 
 
 \declaretheorem[ style = TobeRetainedstyle, name = {Synthèse} ]{Synthesis}
@@ -150,6 +163,7 @@
 \declaretheorem[ style = Exercisestyle, name = Problème, sibling=exercise]{problem}
 \declaretheorem[ style = Exercisestyle, name = Exemple]{example}
 \declaretheorem[ style = Exercisestyle, name = Exemple, sibling=example]{Ex}
+\declaretheorem[ style = StyleEcriture,name = {},numbered =no  ]{Ecriture}
 \makeatother
 
 
