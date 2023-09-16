@@ -1,0 +1,87 @@
+\newcommand{\bi}{\begin{itemize}}
+ \newcommand{\ei}{\end{itemize}}
+  \newcommand{\be}{\begin{Ex}}
+ \newcommand{\ee}{\end{Ex}}
+ \newcommand{\mn}[1]{\marginnote{\footnotesize #1}}
+  \newcommand{\sn}[1]{\sidenote{\footnotesize #1}}
+
+\newcommand{\mzt}{\emph{muʿtazilite}} \newcommand{\imam}{\emph{imām }}
+\newcommand{\NA}{\emph{Nostra Aetate}} 
+\newcommand{\LG}{\emph{Lumen Gentium}} 
+\newcommand{\CD}{\emph{la Cité de Dieu }}  
+
+\newcommand{\CB}{\emph{Cedric Baylocq }} % nom du professeur
+\newcommand{\riba}{\emph{Ribâ }}
+\newcommand{\gharar}{\emph{Gharar }}
+
+
+%Recherche \hypertarget et remplacer par \vide
+% \protect\hyperlink par \vide
+%\texorpdfstring par RIEN
+% \RL : \TArabe
+% rechercher \footnote{ et remplacer par \sn{
+% rechercher Al Gazali
+%\newcommand\TArabe[1]{\foreignlanguage{arabic}{\RL}}
+\newcommand\TArabe[1]{\foreignlanguage{arabic}{#1}}
+\newcommand\TGrec[1]{\foreignlanguage{greek}{#1}}
+\newcommand{\vide}[1]{}
+
+\renewcommand{\listtheoremname}{Liste des Definitions}
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
+
+\newcommand{\tnote}{\textsuperscript}
+
+
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+
+% Prints an epigraph and speaker in sans serif, all-caps type.
+\newcommand{\openepigraph}[2]{%
+  %\sffamily\fontsize{14}{16}\selectfont
+  \begin{fullwidth}
+  \sffamily\large
+  \begin{doublespace}
+  \noindent\allcaps{#1}\\% epigraph
+  \noindent\allcaps{#2}% author
+  \end{doublespace}
+  \end{fullwidth}
+}
+ 
+
+
+ 
+
+% Prints argument within hanging parentheses (i.e., parentheses that take
+% up no horizontal space).  Useful in tabular environments.
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
+%%
+% Prints an asterisk that takes up no horizontal space.
+% Useful in tabular environments.
+
+
+
+% Macros for typesetting the documentation
+\newcommand{\hlred}[1]{\textcolor{Maroon}{#1}}% prints in red
+\newcommand{\hangleft}[1]{\makebox[0pt][r]{#1}}
+\newcommand{\hairsp}{\hspace{1pt}}% hair space
+\newcommand{\hquad}{\hskip0.5em\relax}% half quad space
+
+\newcommand{\ie}{\textit{i.\hairsp{}e.}\xspace}
+\newcommand{\eg}{\textit{e.\hairsp{}g.}\xspace}
+\newcommand{\na}{\quad--}% used in tables for N/A cells
+
+% Prints an epigraph and speaker in sans serif, all-caps type.
+
+
+
+
+
+%%
