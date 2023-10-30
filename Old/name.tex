@@ -1,0 +1,95 @@
+\newcommand{\ai}{\textit{AI}\xspace}
+\newcommand{\AI}{\textit{Artificial Intelligence}\xspace}
+\newcommand{\VaR}{\textit{VaR}\xspace}
+\newcommand{\TVaR}{\textit{TVaR}\xspace}
+\newcommand{\xTVaR}{\textit{xTVaR}\xspace}
+\newcommand{\CoVaR}{\textit{Co-VaR}\xspace}
+\newcommand{\CoTVaR}{\textit{Co-TVaR}\xspace}
+\newcommand{\CoxTVaR}{\textit{Co-xTVaR}\xspace}
+
+
+
+%Recherche \hypertarget et remplacer par \vide
+% \protect\hyperlink par \vide
+%\texorpdfstring par RIEN
+% \RL : \TArabe
+% rechercher \footnote{ et remplacer par \sn{
+% rechercher Al Gazali
+%\newcommand\TArabe[1]{\foreignlanguage{arabic}{\RL}}
+\newcommand\TArabe[1]{\foreignlanguage{arabic}{#1}}
+\newcommand{\vide}[1]{}
+ 
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
+
+\newcommand{\tnote}{\textsuperscript}
+
+
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+
+% Prints an epigraph and speaker in sans serif, all-caps type.
+\newcommand{\openepigraph}[2]{%
+  %\sffamily\fontsize{14}{16}\selectfont
+  \begin{fullwidth}
+  \sffamily\large
+  \begin{doublespace}
+  \noindent\allcaps{#1}\\% epigraph
+  \noindent\allcaps{#2}% author
+  \end{doublespace}
+  \end{fullwidth}
+}
+
+
+
+
+\Newassociation{solution}{Soln}{Risk} 
+\Newassociation{hint}{Hint}{Risk} 
+\Newassociation{Solution}{sSol}{testtwo} 
+\newcommand{\prehint}{~[Hint]} 
+\newcommand{\presolution}{~[Solution]} 
+
+\renewcommand{\Solnlabel}[1]{\emph{Solution #1}} 
+%\renewcommand{\Solnlabel}[1]{\emph{#1}} 
+\renewcommand{\Hintlabel}[1]{\emph{Hint #1}} 
+\renewcommand{\sSollabel}[1]{\emph{Solution to #1}} 
+ 
+
+% Prints argument within hanging parentheses (i.e., parentheses that take
+% up no horizontal space).  Useful in tabular environments.
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
+%%
+% Prints an asterisk that takes up no horizontal space.
+% Useful in tabular environments.
+
+
+
+% Macros for typesetting the documentation
+\newcommand{\hlred}[1]{\textcolor{Maroon}{#1}}% prints in red
+\newcommand{\hangleft}[1]{\makebox[0pt][r]{#1}}
+\newcommand{\hairsp}{\hspace{1pt}}% hair space
+\newcommand{\hquad}{\hskip0.5em\relax}% half quad space
+
+\newcommand{\ie}{\textit{i.\hairsp{}e.}\xspace}
+\newcommand{\eg}{\textit{e.\hairsp{}g.}\xspace}
+\newcommand{\na}{\quad--}% used in tables for N/A cells
+
+ \newcommand{\bi}{\begin{itemize}}
+ \newcommand{\ei}{\end{itemize}}
+  \newcommand{\be}{\begin{Ex}}
+ \newcommand{\ee}{\end{Ex}}
+ \newcommand{\mn}[1]{\marginnote{#1}}
+  \newcommand{\sn}[1]{\sidenote{#1}}
+%  \renewcommand{\chapter}[1][]{\chapter{#1}}
+%  \renewcommand{\section}[1][]{\section{#1}}
+%\renewcommand{\subsection}[1][]{\subsection{#1}}
+ \renewcommand{\subsubsection}[1][]{\paragraph{#1}}
+% \renewcommand{\paragraph}[1][]{\paragraph{#1}}
+%%

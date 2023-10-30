@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[justified,marginals=raggedright,notoc]{tufte-book}
+%\documentclass{tufte-book}
+
+
+%\usepackage{minionpro,mnsymbol} % Minion Font
+%%
+% Book metadata
+%--------------------------------------
+\title{Islam}
+\author[Guillaume Gorge]{Guillaume Gorge}
+\publisher{ }
+%--------------------------------------
+%%
+% If they're installed, use Bergamo and Chantilly from www.fontsite.com.
+% They're clones of Bembo and Gill Sans, respectively.
+
+
+\include{Format}
+\include{FormatTheorem}
+\include{name}
+%\usepackage{amsthm, thmtools}
+%%
+
+
+
+
+\begin{document}
+
+% Front matter
+\frontmatter
+
+% r.1 blank page
+%\blankpage
+
+% v.2 epigraphs
+%\newpage\thispagestyle{empty}
+
+
+
+
+% r.3 full title page
+\maketitle
+
+\newpage
+% r.5 contents
+%-------------------------------------
+\pagenumbering{roman} 
+\setcounter{page}{1}
+\begin{fullwidth}
+\tableofcontents
+\end{fullwidth}
+
+
+
+% r.7 dedication
+
+~\vfill
+\begin{doublespace}
+\noindent\fontsize{18}{22}\selectfont\itshape
+\nohyphenation
+%dedicated
+\end{doublespace}
+\vfill
+\vfill
+
+
+% r.9 introduction
+\cleardoublepage
+
+
+% r.5 contents
+
+ 
+
+%%
+% Start the main matter (normal chapters)
+%\Opensolutionfile{Risk}[ans2]{Solutions} 
+\Opensolutionfile{Risk}[ans2]
+
+%\Writetofile{Risk}{\protect\subsection{Solutions}} 
+\Writetofile{Risk}
+
+%-------------------------------------
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+
+\include{CoursPisani/Introduction}
+\mainmatter
+
+%\include{Test}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\part{Introduction à l'Islam}
+
+\include{CoursPisani/IntroIslam} %1
+%\include{CoursPisani/Historique} %2
+%\include{CoursPisani/Prophete} %3
+%\include{CoursPisani/Coran} %4 et 5
+%\include{CoursPisani/5piliers}
+%\include{CoursPisani/Croyances} %8
+%\include{IbnToumart}
+%\include{CoursPisani/Shiisme} %9
+%\include{CoursPisani/Droit} %10
+%\include{CoursPisani/Soufisme}
+%\include{CoursPisani/Philosophie}
+%\include{CoursPisani/Eschatologie}
+%\include{CoursPisani/Universalite}
+%\include{GeneralIslam/FemmeIslam}
+%\include{GeneralIslam/Christianisme}
+\include{Theologiens}
+
+\backmatter
+
+\clearpage 
+\bibliography{Theo}
+\bibliographystyle{apalike}
+
+%\listoftheorems[ignoreall,show={Theo,theorem,Theorem}]
+
+%\listoftheorems
+
+%\printindex
+
+
+\begingroup               % Temporarily disable \clearpage to show both lists on one page
+  \let\clearpage\relax    % http://tex.stackexchange.com/a/14511/104449
+
+
+
+ 
+
+  
+\endgroup
+
+
+
+\end{document}
