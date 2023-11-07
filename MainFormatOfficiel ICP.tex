@@ -8,12 +8,17 @@
 \documentclass[oneside,10pt]{article}
 % other LaTeX packages.....
 %\include{Format}
+
+
+
 \input{FormatThese}
 \input{FormatTheorem}
 \input{name}
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{comment}
-
+\usepackage[    bibstyle=numeric,    sorting=nyt]{kaobiblio}
+\addbibresource{zotero.bib} % Bibliography file
+\addbibresource{Theo.bib} % Bibliography file
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
@@ -21,7 +26,7 @@
  
 %\title{Les \textit{relais} de \LS : L’enjeu de la réception dans le temps \\ Enquête sur la revue \RLimite}
 %\title{Le \textit{style} de Laudato Si \\ \large Pour une théologie du dialogue des religions \\ \large }
-\title{Christologie dans la Chine du VIIIème siècle à travers le Stèle de Xi’an}
+\title{Urgences pastorales du moment présent \\Christoph Theobald}
 
 %\author{\normalsize ISTR 2023 - Devoir de M1 \\ \normalsize Guillaume Gorge}
 \author{Guillaume Gorge}
@@ -48,7 +53,7 @@
 %\include{TheologieChrétienneReligions/9. ReligionCulture}
 %\include{TheologieChrétienneReligions/Validation}
 
-\include{ChristologieCultureHistoire/ValidationChine}
+\include{2023 - Dialogue Mission XX/Theobald}
 %\include{CourantsIslamContemporain/ValidationFinale}
 %\include{CourantsIslamContemporain/Validation}*
 %\include{CoursCandiard/validationFinale}
@@ -81,7 +86,18 @@
 %\include{Glossaire}
 %\listoftheorems
 \begin{singlespace}
-\bibliography{Theo}
+ \defbibnote{bibnote}{ } % Prepend this text to the bibliography
+\printbibliography[heading=bibintoc, title=Bibliographie, prenote=bibnote] % Add the bibliography heading to the ToC, set the title of the bibliography and output the 
+ 
+%\bibliography{zotero} 
 %\bibliography{zotero, Theo,Theo2}
 \end{singlespace}
 \end{document}
+
+
+
+
+
+
+
+ 
